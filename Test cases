@@ -1,0 +1,134 @@
+1. Feature: Searching
+User story: As a user who is interested in buying cars
+                   I want to search for preferred Make and Model
+                   So that I can get available deals at “http://www.cars.bg”
+Background:
+Given I navigate to the Home page - http://www.cars.bg
+          And I select “търсене“
+          And I select Марка drop-down
+
+1.1. Scenario: User is able to search by preferred Make 
+ When I choose Марка “Subaru”
+ Then I should see all cars 'Subaru” 
+
+Chrome PC –Passed; Chrome Mobile- Passed; Firefox PC- Passed
+
+1.2. Scenario: User is NOT able to search by 2 or more preferred Make 
+ When I choose Марка “VW”
+           And I choose also Марка “Volvo”
+ Then I should see only the last chosen Mark- “Volvo” 
+
+Chrome PC –Passed; Chrome Mobile- Passed; Firefox PC- Passed
+
+1.3. Scenario: User is able to search by 2 or more preferred Models of preferred Make 
+ When I choose Марка “ZAZ”
+           And I choose Model “965” and “968”
+ Then I should see only the offers with Models “965” and “968” 
+
+Chrome PC –Passed; Chrome Mobile- Passed; Firefox PC- Passed
+
+1.4. Scenario: User is able to see and choose another preferred Model after he already see one
+  When I choose Марка 'UAZ'
+            And I choose from Модел drop-down “452”    
+            And I see all offers with UAZ 452
+           And I select “go back” button       
+  Then I should see again all Models of UAZ in Модел drop-down
+
+Chrome PC –Failed; Chrome Mobile- Failed; Firefox PC- Not run
+
+ 1.5. Scenario: User is not able to change or see other word in the drop-down except Makes      
+            And I choose Марка 'Volga'
+            And I inspect html
+            And I search for 'Volga' in html
+When I change Make 'Volga' with 'MARIA’
+ Then I should see in the “Марка” drop-down only Makes
+
+Chrome PC –Failed; Chrome Mobile- Not run; Firefox PC- Failed;
+1.6. Scenario: User is able to see preferred Model on preferred Make 
+  When I choose Марка 'Bentley'
+            And I choose from Модел drop-down “Continental”            
+  Then I should see all cars 'Bentley Continental” 
+Chrome PC –Passed; Chrome Mobile- Passed; Firefox PC- Passed
+
+1.7. Scenario: User is able to see all detailed information about preferred Mark and Model.
+  When I choose Марка 'Subaru'
+            And I choose from Модел drop-down “OUTBACK”    
+            And I see all offers with Subaru OUTBACK
+           And I select one offer       
+  Then I should see all detailed information about the preferred car.
+
+ Chrome PC –Passed; Chrome Mobile- Passed; Firefox PC- Passed
+
+1.8. Scenario: User is NOT able to see Models in „Модел“drop-down, which are not of the preferred Make car.
+            I choose Марка 'ZAZ'
+            And I choose from Модел drop-down “965”    
+            And I see all offers with ZAZ 965
+            And go back to search by select “Търсене” button, which is up and right.
+  When I select Марка „Suzuki“
+            And I select Модел “Alto”  
+And I see all offers with Suzuki Alto
+And I select “go back” button                   
+Then I should see on the Mark drop-down - Suzuki and on the Models drop-down –the Models of Suzuki
+Chrome PC - Failed; Chrome Mobile- Passed; Firefox PC- NOT run
+
+---------------------------------------------------------------------------------------------------------------------
+2. Feature: Register
+User story: As a user I want to make a registration so that I can have my account.
+Background:
+        Given I navigate to the Home page – http://www.cars.bg
+                   And I go to “Меню” and select "Вход/Регистрация”
+                    And I click on “Частно лице”
+                 And select „Регистрация“   
+ 2.1. Scenario: User is able to make registration, if he put valid data /phone number, password, email and etc. /
+        When I put valid data 
+        Then I should have registration
+Chrome PC –Passed; Chrome Mobile- Passed; Firefox PC- Passed
+
+
+ 2.2. Scenario: User is not able to make registration, if he put invalid data /not exist phone or already registered phone or email or short password/
+        When I put invalid data        1. Not exist phone -087895255145
+                                                      2. Not exist email – mimoza_1981@abvbg
+                                                      3. Password with only 6 characters
+        Then I should see error message and not have registration
+Chrome PC –Passed; Chrome Mobile- Passed; Firefox PC- Passed
+
+2.3 Scenario: User is not able to make registration, if he put invalid data on Name of the user
+        When I put numbers in “Име” 
+        Then I should see error message 
+
+Chrome PC –Failed; Chrome Mobile - Failed; Firefox PC- Failed;
+       3. Feature: Login
+              User story: As a user I want to login so that I can go to my account and offer my car.
+              Background:
+         Given I navigate to the Home page – http://www.cars.bg
+                    And I go to “Меню” and select "Вход/Регистрация”
+                    And I click on “Частно лице”                
+ 3.1. Scenario: User is able to login
+           When I put valid data - phone number and password
+                      And I select “Вход“
+           Then I should login
+Chrome PC –Passed; Chrome Mobile- Passed; Firefox PC- Passed
+  3.2 Scenario: User is NOT able to login, if there is invalid data
+                When I put valid phone number -878952551;
+                           And I put invalid password – Cars_123456
+                           And I select “Вход“
+                Then I should have error message and no log in
+Chrome PC –Passed; Chrome Mobile- Passed; Firefox PC- Passed
+
+             4. Feature: Publish an offer 
+            User story: As a login user I want to publish offer so that I can sell my car.
+    4.1 Scenario: User is NOT able to publish offer, if he is not login.
+                Given I navigate to the Home page – http://www.cars.bg
+                  When I go to “Меню” and select "+ Публикувай обява”
+                   Then I should be navigate to login 
+Chrome PC –Passed; Chrome Mobile- Passed; Firefox PC- Passed
+        4.2 Scenario: Logged user is able to offer a car by add information in order to publish
+                Given I navigate to the Home page – http://www.cars.bg
+                           And I go to “Меню” and select "Вход/Регистрация”
+                           And I click on “Частно лице” 
+                           And I logged in my account          
+                When I go to “Меню” 
+                           And I select "+ Публикувай обява”
+                Then I can add information about my car in order to publish. 
+
+Chrome PC –Passed; Chrome Mobile- Passed; Firefox PC- Passed
