@@ -86,8 +86,8 @@ Chrome PC –Passed; Chrome Mobile- Passed; Firefox PC- Passed
 
 
  2.2. Scenario: User is not able to make registration, if he put invalid data /not exist phone or already registered phone or email or short password/
-        When I put invalid data        1. Not exist phone -087895255145
-                                                      2. Not exist email – mimoza_1981@abvbg
+        When I put invalid data        1. Not exist phone -087893275145
+                                                      2. Not exist email – mimozaqa@abvbg
                                                       3. Password with only 6 characters
         Then I should see error message and not have registration
 Chrome PC –Passed; Chrome Mobile- Passed; Firefox PC- Passed
@@ -109,7 +109,7 @@ Chrome PC –Failed; Chrome Mobile - Failed; Firefox PC- Failed;
            Then I should login
 Chrome PC –Passed; Chrome Mobile- Passed; Firefox PC- Passed
   3.2 Scenario: User is NOT able to login, if there is invalid data
-                When I put valid phone number -878952551;
+                When I put valid phone number ;
                            And I put invalid password – Cars_123456
                            And I select “Вход“
                 Then I should have error message and no log in
