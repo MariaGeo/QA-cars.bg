@@ -36,21 +36,13 @@ Chrome PC –Passed; Chrome Mobile- Passed; Firefox PC- Passed
 
 Chrome PC –Failed; Chrome Mobile- Failed; Firefox PC- Not run
 
- 1.5. Scenario: User is not able to change or see other word in the drop-down except Makes      
-            And I choose Марка 'Volga'
-            And I inspect html
-            And I search for 'Volga' in html
-When I change Make 'Volga' with 'MARIA’
- Then I should see in the “Марка” drop-down only Makes
-
-Chrome PC –Failed; Chrome Mobile- Not run; Firefox PC- Failed;
-1.6. Scenario: User is able to see preferred Model on preferred Make 
+1.5. Scenario: User is able to see preferred Model on preferred Make 
   When I choose Марка 'Bentley'
             And I choose from Модел drop-down “Continental”            
   Then I should see all cars 'Bentley Continental” 
 Chrome PC –Passed; Chrome Mobile- Passed; Firefox PC- Passed
 
-1.7. Scenario: User is able to see all detailed information about preferred Mark and Model.
+1.6. Scenario: User is able to see all detailed information about preferred Mark and Model.
   When I choose Марка 'Subaru'
             And I choose from Модел drop-down “OUTBACK”    
             And I see all offers with Subaru OUTBACK
@@ -59,7 +51,7 @@ Chrome PC –Passed; Chrome Mobile- Passed; Firefox PC- Passed
 
  Chrome PC –Passed; Chrome Mobile- Passed; Firefox PC- Passed
 
-1.8. Scenario: User is NOT able to see Models in „Модел“drop-down, which are not of the preferred Make car.
+1.7. Scenario: User is NOT able to see Models in „Модел“drop-down, which are not of the preferred Make car.
             I choose Марка 'ZAZ'
             And I choose from Модел drop-down “965”    
             And I see all offers with ZAZ 965
@@ -97,6 +89,7 @@ Chrome PC –Passed; Chrome Mobile- Passed; Firefox PC- Passed
         Then I should see error message 
 
 Chrome PC –Failed; Chrome Mobile - Failed; Firefox PC- Failed;
+
        3. Feature: Login
               User story: As a user I want to login so that I can go to my account and offer my car.
               Background:
