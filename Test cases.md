@@ -14,7 +14,7 @@ Given I navigate to the Home page - http://www.cars.bg
   And I select Марка drop-down
 ````
 
-__ 1.1.  `Scenario:` __ User is able to search by preferred Make 
+####### 1.1.  `Scenario:` ####### User is able to search by preferred Make 
  
         When I choose Марка “Subaru”
         Then I should see all cars "Subaru” 
