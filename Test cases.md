@@ -7,14 +7,14 @@
  
  > So that I can get available deals at “http://www.cars.bg”
  
-##### Background:#####
+##### Background: #####
 ````html
 Given I navigate to the Home page - http://www.cars.bg
   And I select “търсене“
   And I select Марка drop-down
 ````
 
-** 1.1.  `Scenario:`** User is able to search by preferred Make 
+** 1.1.  `Scenario:` ** User is able to search by preferred Make 
  
         When I choose Марка “Subaru”
         Then I should see all cars "Subaru” 
@@ -104,7 +104,7 @@ Given I navigate to the Home page - http://www.cars.bg
 
 > So that I can have my account.
 
-##### Background:#####
+##### Background: #####
 ````html
         Given I navigate to the Home page – http://www.cars.bg
           And I go to “Меню” and select "Вход/Регистрация”
@@ -150,7 +150,7 @@ Given I navigate to the Home page - http://www.cars.bg
 
 > So that I can go to my account and offer my car.
 
-##### Background:#####
+##### Background: #####
 ````html
             Given I navigate to the Home page – http://www.cars.bg
               And I go to “Меню” and select "Вход/Регистрация”
