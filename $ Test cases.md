@@ -44,7 +44,7 @@ Given I navigate to the Home page - http://www.cars.bg
  | --- | --- | --- |
  | Passed | Passed | Passed |
 
- **1.4.**Scenario: ** User is able to choose another preferred Model after he has already viewed  one Model
+ 1.4.**Scenario:** User is able to choose another preferred Model after he has already viewed  one Model
 
          When I choose Марка 'UAZ'
           And I choose from Модел drop-down “452”    
@@ -57,7 +57,7 @@ Given I navigate to the Home page - http://www.cars.bg
 
 
 
-**1.5.**Scenario: ** User is able to see preferred Model on preferred Make 
+1.5.**Scenario:** User is able to see preferred Model on preferred Make 
 
           When I choose Марка 'Bentley'
            And I choose from Модел drop-down “Continental”            
@@ -66,7 +66,7 @@ Given I navigate to the Home page - http://www.cars.bg
  | --- | --- | --- |
  | Passed | Passed | Passed |
 
-**1.6.**Scenario: ** User is able to see all detailed information about preferred Mark and Model.
+1.6.**Scenario:** User is able to see all detailed information about preferred Mark and Model.
  
          When I choose Марка 'Subaru'
           And I choose from Модел drop-down “OUTBACK”    
@@ -78,7 +78,7 @@ Given I navigate to the Home page - http://www.cars.bg
  | --- | --- | --- |
  | Passed | Passed | Passed 
 
-**1.7.**Scenario: ** User is NOT able to see Models in „Модел“drop-down, which are not of the preferred Make car.
+1.7.**Scenario:** User is NOT able to see Models in „Модел“drop-down, which are not of the preferred Make car.
 
          When I choose Марка 'ZAZ'
           And I choose from Модел drop-down “965”    
@@ -111,7 +111,7 @@ Given I navigate to the Home page - http://www.cars.bg
           And I click on “Частно лице”
           And select „Регистрация“ 
 ````
- **2.1. Scenario: ** User is able to make registration, if he put valid data /phone number, password, email and etc./
+ 2.1.**Scenario:** User is able to make registration, if he put valid data /phone number, password, email and etc./
  
           When I put valid data 
           Then I should have registration
@@ -120,7 +120,7 @@ Given I navigate to the Home page - http://www.cars.bg
  | Passed | Passed | Passed |
 
 
-**2.2.**Scenario: **  User is not able to make registration, if he put invalid data /not exist phone or already registered phone or email or short password/
+2.2.**Scenario:**  User is not able to make registration, if he put invalid data /not exist phone or already registered phone or email or short password/
 
          When I put invalid data        1. Not exist phone -087893275145
                                         2. Not exist email – mimozaqa@abvbg
@@ -132,7 +132,7 @@ Given I navigate to the Home page - http://www.cars.bg
  | Passed | Passed | Passed |
 
 
-**2.3.Scenario: ** Scenario: User is not able to make registration, if he put invalid data on Name of the user
+2.3.**Scenario:** User is not able to make registration, if he put invalid data on Name of the user
 
          When I put numbers in “Име” 
          Then I should see error message 
@@ -156,7 +156,7 @@ Given I navigate to the Home page - http://www.cars.bg
               And I go to “Меню” and select "Вход/Регистрация”
               And I click on “Частно лице”  
 ````
-**3.1.Scenario: **  User is able to login
+3.1.**Scenario:**  User is able to login
 
            When I put valid data - phone number and password
             And I select “Вход“
@@ -165,7 +165,7 @@ Given I navigate to the Home page - http://www.cars.bg
  | --- | --- | --- |
  | Passed | Passed | Passed |
            
-  **3.2.Scenario: ** User is NOT able to login, if there is invalid data
+  3.2.**Scenario:** User is NOT able to login, if there is invalid data
   
             When I put valid phone number ;
              And I put invalid password – Cars_123456
@@ -184,7 +184,7 @@ Given I navigate to the Home page - http://www.cars.bg
 
 > So that I can sell my car.
 
- **4.1. Scenario: **  User is NOT able to publish offer, if he is not login.
+ 4.1.**Scenario:**  User is NOT able to publish offer, if he is not login.
  
             Given I navigate to the Home page – http://www.cars.bg
              When I go to “Меню” and select "+ Публикувай обява”
@@ -194,7 +194,7 @@ Given I navigate to the Home page - http://www.cars.bg
  | --- | --- | --- |
  | Passed | Passed | Passed |
  
- **4.2. Scenario: ** Logged user is able to offer a car by add information in order to publish
+ 4.2.**Scenario:** Logged user is able to offer a car by add information in order to publish
  
            Given I navigate to the Home page – http://www.cars.bg
              And I go to “Меню” and select "Вход/Регистрация”
