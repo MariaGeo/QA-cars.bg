@@ -14,7 +14,7 @@ Given I navigate to the Home page - http://www.cars.bg
   And I select Марка drop-down
 ````
 
- **1.1. **Scenario:**  User is able to search by preferred Make 
+ 1.1. **Scenario: **  User is able to search by preferred Make 
  
         When I choose Марка “Subaru”
         Then I should see all cars "Subaru” 
@@ -23,7 +23,7 @@ Given I navigate to the Home page - http://www.cars.bg
  | --- | --- | --- |
  | Passed | Passed | Passed |
  
- **1.2.**Scenario: **  User is NOT able to search by 2 or more preferred Make
+ 1.2. **Scenario: **  User is NOT able to search by 2 or more preferred Make
  
  
          When I choose Марка “VW”
@@ -34,7 +34,7 @@ Given I navigate to the Home page - http://www.cars.bg
  | --- | --- | --- |
  | Passed | Passed | Passed |
 
- **1.3.**Scenario: ** User is able to search by 2 or more preferred Models of preferred Make 
+ 1.3. **Scenario: ** User is able to search by 2 or more preferred Models of preferred Make 
 
           When I choose Марка “ZAZ”
            And I choose Model “965” and “968”
